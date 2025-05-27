@@ -7,7 +7,7 @@ import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import TrainerView from './pages/TrainerView';
 import TraineeView from './pages/TraineeView';
-import ModuleDetail from './pages/ModuleDetail';
+import ModuleDetail from './pages/ModuleDetail.tsx';
 import Leaderboard from './pages/Leaderboard';
 import Profile from './pages/Profile';
 import NotFound from './pages/NotFound';
