@@ -32,6 +32,27 @@ export interface LeaderboardEntry {
   completedModules: number;
 }
 
+export interface SubModule {
+  id: string;
+  title: string;
+  description: string;
+  type: '3d' | 'video' | 'text';
+  duration: string;
+  status: 'completed' | 'in-progress' | 'locked';
+  progress: number;
+  difficulty: 'beginner' | 'intermediate' | 'advanced';
+  estimatedTime: string;
+  thumbnail: string;
+  prerequisites: string[];
+  videoUrl: string;
+  resources: {
+    title: string;
+    description: string;
+    type: 'link' | 'download';
+    url: string;
+  }[];
+}
+
 // Generate mock modules
 export const fetchMockModules = async (): Promise<Module[]> => {
   // Simulate API delay
@@ -250,3 +271,168 @@ export const fetchMockTrainees = async () => {
     }
   ];
 };
+
+export const mockModulesWithSections = [
+  {
+    id: "1",
+    title: "Introduction to Equipment Safety",
+    description: "Learn the fundamentals of workplace equipment safety protocols and procedures.",
+    duration: "45 min",
+    image: "https://images.pexels.com/photos/3862130/pexels-photo-3862130.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    type: "3d",
+    completionRate: 100,
+    prerequisites: [],
+    skills: ["Safety", "Equipment Handling"],
+    subModules: [
+      {
+        id: "1",
+        title: "Introduction to Safety Equipment",
+        description: "Learn about basic safety gear and their proper usage. This module covers all essential protective equipment and their applications in different workplace scenarios.",
+        type: "video",
+        duration: "10 min",
+        status: "completed",
+        progress: 100,
+        difficulty: "beginner",
+        estimatedTime: "10-15 min",
+        thumbnail: "https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg",
+        prerequisites: [],
+        videoUrl: "https://example.com/videos/safety-equipment-intro.mp4",
+        resources: [
+          {
+            title: "Safety Equipment Guide PDF",
+            description: "Complete reference guide for all safety equipment",
+            type: "download",
+            url: "https://example.com/resources/safety-guide.pdf"
+          },
+          {
+            title: "Equipment Checklist",
+            description: "Printable checklist for equipment inspection",
+            type: "download",
+            url: "https://example.com/resources/equipment-checklist.pdf"
+          },
+          {
+            title: "Safety Standards Database",
+            description: "Access to industry safety standards",
+            type: "link",
+            url: "https://example.com/safety-standards"
+          }
+        ]
+      },
+      {
+        id: "2",
+        title: "Equipment Operation Demo",
+        description: "Interactive 3D demonstration of equipment operation. Practice with virtual machinery to understand proper handling techniques and safety procedures.",
+        type: "3d",
+        duration: "15 min",
+        status: "in-progress",
+        progress: 60,
+        difficulty: "intermediate",
+        estimatedTime: "15-20 min",
+        thumbnail: "https://images.pexels.com/photos/162553/keys-workshop-mechanic-tools-162553.jpeg",
+        prerequisites: ["Introduction to Safety Equipment"],
+        videoUrl: "https://example.com/videos/equipment-operation.mp4",
+        resources: [
+          {
+            title: "Operation Manual",
+            description: "Detailed equipment operation instructions",
+            type: "download",
+            url: "https://example.com/resources/operation-manual.pdf"
+          },
+          {
+            title: "Interactive Tutorial",
+            description: "Step-by-step interactive guide",
+            type: "link",
+            url: "https://example.com/interactive-tutorial"
+          }
+        ]
+      },
+      {
+        id: "3",
+        title: "Safety Protocols",
+        description: "Detailed safety protocols and procedures for emergency situations. Learn how to respond to various workplace incidents and maintain a safe environment.",
+        type: "text",
+        duration: "20 min",
+        status: "locked",
+        progress: 0,
+        difficulty: "advanced",
+        estimatedTime: "20-25 min",
+        thumbnail: "https://images.pexels.com/photos/257636/pexels-photo-257636.jpeg",
+        prerequisites: ["Equipment Operation Demo"],
+        videoUrl: "https://example.com/videos/safety-protocols.mp4",
+        resources: [
+          {
+            title: "Emergency Response Guide",
+            description: "Comprehensive emergency response procedures",
+            type: "download",
+            url: "https://example.com/resources/emergency-guide.pdf"
+          },
+          {
+            title: "Safety Protocol Database",
+            description: "Access to all safety protocols",
+            type: "link",
+            url: "https://example.com/safety-protocols"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: "2",
+    title: "Machinery Operation Basics",
+    description: "Master the essential skills needed to operate standard machinery in a safe and efficient manner.",
+    duration: "1h 15min",
+    image: "https://images.pexels.com/photos/162553/keys-workshop-mechanic-tools-162553.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    type: "3d",
+    completionRate: 65,
+    prerequisites: ["Introduction to Equipment Safety"],
+    skills: ["Machinery Operation", "Maintenance"],
+    subModules: [
+      {
+        id: "1",
+        title: "Machinery Overview",
+        description: "Overview of machinery types and their uses.",
+        type: "video",
+        duration: "12 min",
+        status: "completed",
+        progress: 80,
+        difficulty: "beginner",
+        estimatedTime: "10-15 min",
+        thumbnail: "https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg",
+        prerequisites: [],
+        // videoUrl: "https://example.com/videos/machinery-overview.mp4",
+        // videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+        videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
+        resources: [
+          {
+            title: "Machinery Types PDF",
+            description: "Reference for all machinery types",
+            type: "download",
+            url: "https://example.com/resources/machinery-types.pdf"
+          }
+        ]
+      },
+      {
+        id: "2",
+        title: "Operation Safety",
+        description: "Safety procedures for operating machinery.",
+        type: "video",
+        duration: "18 min",
+        status: "in-progress",
+        progress: 50,
+        difficulty: "intermediate",
+        estimatedTime: "15-20 min",
+        thumbnail: "https://images.pexels.com/photos/162553/keys-workshop-mechanic-tools-162553.jpeg",
+        prerequisites: ["Machinery Overview"],
+        videoUrl: "https://example.com/videos/operation-safety.mp4",
+        resources: [
+          {
+            title: "Operation Safety Checklist",
+            description: "Checklist for safe operation",
+            type: "download",
+            url: "https://example.com/resources/operation-safety-checklist.pdf"
+          }
+        ]
+      }
+    ]
+  }
+];
