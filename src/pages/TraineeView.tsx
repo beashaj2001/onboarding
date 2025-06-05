@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Routes, Route, Link, useNavigate, useParams } from 'react-router-dom';
 import Layout from '../components/Layout/Layout';
 import Card from '../components/common/Card';
-import Button from '../common/Button';
+import Button from '../components/common/Button';
 import ModuleRoadmap from '../components/features/ModuleRoadmap';
 import Quiz from '../components/features/Quiz';
 import { 
