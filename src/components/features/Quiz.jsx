@@ -81,7 +81,7 @@ const Quiz = ({ quiz, onBack }) => {
                     {isSubmitted && (
                       <div className="ml-4">
                         {optionIndex === question.correctAnswer ? (
-                          <CheckCircle className="text-green-500" size={20} />
+                          <CheckCircle className="text-green-500\" size={20} />
                         ) : currentAnswers[questionIndex] === optionIndex ? (
                           <XCircle className="text-red-500" size={20} />
                         ) : null}
