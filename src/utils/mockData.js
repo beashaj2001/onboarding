@@ -16,7 +16,59 @@ export const fetchMockModules = async () => {
       type: '3d',
       completionRate: 100,
       prerequisites: [],
-      skills: ['Safety', 'Equipment Handling']
+      skills: ['Safety', 'Equipment Handling'],
+      quiz: [
+        {
+          question: 'What is the first step in equipment safety?',
+          options: [
+            'Start the equipment immediately',
+            'Check for proper PPE (Personal Protective Equipment)',
+            'Call a supervisor',
+            'Read the manual later'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'When should safety equipment be inspected?',
+          options: [
+            'Only when it breaks',
+            'Once a year',
+            'Before each use',
+            'When convenient'
+          ],
+          correctAnswer: 2
+        },
+        {
+          question: 'What should you do if you notice equipment damage?',
+          options: [
+            'Try to fix it yourself',
+            'Ignore it if minor',
+            'Continue working carefully',
+            'Report it immediately'
+          ],
+          correctAnswer: 3
+        },
+        {
+          question: 'Which is NOT a proper safety practice?',
+          options: [
+            'Wearing safety goggles',
+            'Using equipment without training',
+            'Following safety protocols',
+            'Regular equipment maintenance'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'How often should emergency procedures be reviewed?',
+          options: [
+            'Monthly',
+            'Only after accidents',
+            'Never',
+            'When equipment changes'
+          ],
+          correctAnswer: 0
+        }
+      ]
     },
     {
       id: '2',
@@ -27,7 +79,59 @@ export const fetchMockModules = async () => {
       type: '3d',
       completionRate: 65,
       prerequisites: ['Introduction to Equipment Safety'],
-      skills: ['Machinery Operation', 'Maintenance']
+      skills: ['Machinery Operation', 'Maintenance'],
+      quiz: [
+        {
+          question: 'What is the correct sequence for starting machinery?',
+          options: [
+            'Power on, check settings, inspect',
+            'Inspect, check settings, power on',
+            'Check settings, power on, inspect',
+            'Power on immediately'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'How should you respond to unusual machinery noise?',
+          options: [
+            'Increase the speed',
+            'Stop immediately',
+            'Ignore if working fine',
+            'Wait until break time'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'What is the purpose of machinery calibration?',
+          options: [
+            'Increase speed',
+            'Reduce maintenance',
+            'Ensure accuracy and safety',
+            'Save power'
+          ],
+          correctAnswer: 2
+        },
+        {
+          question: 'When should machinery maintenance be performed?',
+          options: [
+            'Only when broken',
+            'According to schedule',
+            'When convenient',
+            'During operation'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'Which safety feature should be checked first?',
+          options: [
+            'Emergency stop button',
+            'Power indicator',
+            'Speed settings',
+            'Production counter'
+          ],
+          correctAnswer: 0
+        }
+      ]
     },
     {
       id: '3',
