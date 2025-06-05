@@ -6,7 +6,7 @@ import ProtectedRoute from './components/common/ProtectedRoute';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import TrainerView from './pages/TrainerView';
-import TraineeView from './pages/TraineeView';
+import TraineeView from './pages/TraineeView.tsx';
 import ModuleDetail from './pages/ModuleDetail.tsx';
 import Leaderboard from './pages/Leaderboard';
 import Profile from './pages/Profile';
